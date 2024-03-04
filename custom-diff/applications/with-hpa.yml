@@ -20,11 +20,11 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true  
-## Argocd part to ignore diff
-ignoreDifferences:
-  - group: apps
-    kind: Deployment
-    jsonPointers:
-    - /spec/replicas
-## Argo part
+  ## Argocd part to ignore diff
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      jsonPointers:
+        - /spec/replicas
+  ## Argo part
    
