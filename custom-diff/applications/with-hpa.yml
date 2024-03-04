@@ -17,6 +17,7 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
+  # Argocd ignore diff
   ignoreDifferences:
     - group: apps
       kind: Deployment
