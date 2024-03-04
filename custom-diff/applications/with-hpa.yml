@@ -8,23 +8,18 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/codefresh-contrib/gitops-cert-level-2-examples.git
+    repoURL: https://github.com/hhemied/gitops-cert-level-2-examples.git
     targetRevision: HEAD
     path: ./custom-diff/01-with-hpa
-   
   destination:
     server: https://kubernetes.default.svc
     namespace: example01
-
-  # Sync policy
   syncPolicy:
     syncOptions:
-      - CreateNamespace=true  
-  ## Argocd part to ignore diff
+      - CreateNamespace=true
   ignoreDifferences:
-  - group: apps
-    kind: Deployment
-    jsonPointers:
-    - /spec/replicas
-  ## Argo part
-   
+    - group: apps
+      kind: Deployment
+      jsonPointers:
+        - /spec/replicas
+
